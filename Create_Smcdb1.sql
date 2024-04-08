@@ -1,5 +1,5 @@
 
-CREATE DATABASE smcdb1 COLLATE Modern_spanish_ci_ai
+CREATE DATABASE smcdb1 COLLATE Modern_spanish_ci_ai -- No distingue mayúsculas ni acentos
 
 /*
 OPCIONES DE INTERCALACIÓN
@@ -19,6 +19,4 @@ OPCIONES DE INTERCALACIÓN
 
 -- No es posible crear una tabla si no se especifica al menos una columna. No creo la tabla 'Test'.
 
-CREATE DATABASE smcdb2 COLLATE Latin1_general_cs_as
-
-
+CREATE DATABASE smcdb2 COLLATE Latin1_general_cs_as -- Distingue mayúsculas y acentos
