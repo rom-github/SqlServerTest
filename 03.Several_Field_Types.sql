@@ -1,9 +1,9 @@
 ALTER TABLE Test ADD 
-	charcol CHAR(1),
-	varcharcol VARCHAR(1),
+	charcol CHAR(40),
+	varcharcol VARCHAR(MAX),
 	textcol TEXT,
-	ncharcol NCHAR(1),
-	nvarcharcol NVARCHAR(1),
+	ncharcol NCHAR(40),
+	nvarcharcol NVARCHAR(MAX),
 	ntextcol NTEXT,
 
 	datecol	DATE,
