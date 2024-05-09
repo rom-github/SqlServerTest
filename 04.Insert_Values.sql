@@ -10,7 +10,7 @@ VALUES (
 'A000',
 'Datos de prueba', 'Este es el tipo varchar', 'Este es el tipo Text, que se va a quedar obsoleto en breve', 'Y aquí tenemos un nchar', 'Y un nvarchar', 'A este le pasa como al Text',
 '1900-12-12', '14:00:00.125', '18:35:46', '2000-06-06 14:23:45.123', '2000-06-06 14:23:45.123456', '2000-06-06 14:23:45.123456',
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+45354, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 null, null, null, null,
 '')
 
@@ -34,5 +34,24 @@ INSERT INTO test (Code, varcharcol, decimalcol) values ('NU008', 'Prueba para in
 INSERT INTO test (Code, varcharcol, smallmoneycol) values ('NU009', 'Prueba para insertar una columna de tipo SMALLMONEY.', '12.45')
 INSERT INTO test (Code, varcharcol, moneycol) values ('NU010', 'Prueba para insertar una columna de tipo MONEY.', '12.45')
 
+INSERT INTO test (Code, varcharcol, hierarchyidcol) values ('NU011', 'Prueba para insertar una columna de tipo HIERACHYID.', '/1/34/')
+INSERT INTO test (Code, varcharcol, uniqueidentifiercol) values ('NU012', 'Prueba para insertar una columna de tipo UNIQUEIDENTIFIER.', 1)
+INSERT INTO test (Code, varcharcol, sql_variantcol) values ('NU013', 'Prueba para insertar una columna de tipo SQL_VARIANT.', 12.45)
+INSERT INTO test (Code, varcharcol, xmlcol) values ('NU014', 'Prueba para insertar una columna de tipo XML.', '<?xml version="1.0"?><doc><assembly><name>Semicrol.Entorno</name></assembly></doc>')
 
-
+INSERT INTO [dbo].[Test]
+(Code, 
+charcol, varcharcol, textcol, ncharcol, nvarcharcol, ntextcol, 
+datecol, timecol, smalldatetimecol, datetimecol, datetimeoffsetcol, datetime2col, 
+numericcol, bitcol, tinyintcol, smallintcol, intcol, bigintcol, floatcol, decimalcol, smallmoneycol, moneycol, 
+[binarycol], [varbinarycol], [imagecol], 
+hierarchyidcol, uniqueidentifiercol, sql_variantcol, 
+xmlcol)
+SELECT
+CAST(RAND() AS CHAR(20)), 
+'Char Value 3', 'Varchar Value 3', 'Text Value 3', N'NChar Value 3', N'NVarchar Value 3', N'NText Value 3',
+'20240511', '08:15:30.1234567', '2024-05-11 08:15:00', '2024-05-11 08:15:30', '2024-05-11 08:15:30.1234567 +05:30', '2024-05-11 08:15:30.1234567', 
+RAND()*1000, RAND(), RAND(), RAND(), RAND(), RAND(), RAND(), RAND(), RAND(), RAND(), 
+0x01, 0x01, 0x01,
+'/3/', 'E5626A2A-7C99-4B3F-A825-E0CFB7EBDB44', CAST('SQL Variant Value 3' AS SQL_VARIANT), 
+'<root><node>XML Value 3</node></root>'
